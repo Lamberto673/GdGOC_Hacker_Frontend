@@ -3,18 +3,18 @@ import { Geist_Mono, Google_Sans, Inter } from "next/font/google";
 import "./globals.css";
 
 // Figma: Google Sans for almost all text, Inter for the hero headline and step numbers
-export const googleSans = Google_Sans({
+const googleSans = Google_Sans({
   variable: "--font-google-sans",
   subsets: ["latin"],
   weight: ["400", "500", "700"],
 });
 
-export const inter = Inter({
+const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
 
-export const geistMono = Geist_Mono({
+const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });

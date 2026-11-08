@@ -15,7 +15,7 @@ type TrackCardProps = {
   skills: string;
 };
 
-const TrackCard = ({
+export const TrackCard = ({
   Art,
   eyebrow,
   title,

@@ -3,8 +3,13 @@ import Link from "next/link";
 import React from "react";
 import Logos from "../../../public/assets/heroes/Logos";
 import { MoveRight } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const pathname = usePathname();
+  const active = "block rounded-full px-5 py-3.5 bg-tint-blue text-link font-bold";
+  const idle = "block rounded-full px-5 py-3.5 hover:bg-surface transition-colors";
+
   return (
     <div className="sticky top-0 z-50 w-full bg-white border-b border-line h-26">
       <nav className="flex justify-between items-center h-full px-16">
@@ -15,7 +20,7 @@ const Navbar = () => {
           <li>
             <Link
               href="/"
-              className="block rounded-full px-5 py-3.5 bg-tint-blue text-link font-bold"
+              className={pathname === "/" ? active : idle}
             >
               Home
             </Link>
@@ -23,7 +28,7 @@ const Navbar = () => {
           <li>
             <Link
               href="/About"
-              className="block rounded-full px-5 py-3.5 hover:bg-surface transition-colors"
+              className={pathname === "/About" ? active : idle}
             >
               About
             </Link>
@@ -31,7 +36,7 @@ const Navbar = () => {
           <li>
             <Link
               href="/Overview"
-              className="block rounded-full px-5 py-3.5 hover:bg-surface transition-colors"
+              className={pathname === "/Overview" ? active : idle}
             >
               Overview
             </Link>
@@ -39,7 +44,7 @@ const Navbar = () => {
           <li>
             <Link
               href="/Contact"
-              className="block rounded-full px-5 py-3.5 hover:bg-surface transition-colors"
+              className={pathname === "/Contact" ? active : idle}
             >
               Contact
             </Link>
