@@ -18,7 +18,7 @@ const Lists: Record<string, string>[] = [
 ];
 const MakeYourFirstMove = () => {
   return (
-    <div className="flex flex-col justify-start items-start gap-10 pt-2 px-24 pb-22">
+    <div className="flex flex-col justify-start items-start gap-10 pt-2 px-5 md:px-12 lg:px-24 pb-22">
       <div className="flex flex-col gap-4.5">
         <div className="flex justify-start items-center gap-2.5">
           <span className="size-1.75 bg-brand rounded-full" />
@@ -26,12 +26,12 @@ const MakeYourFirstMove = () => {
             Make your first move
           </p>
         </div>
-        <h2 className="flex flex-col text-5xl leading-13.5 font-bold">
+        <h2 className="flex flex-col text-4xl leading-11 md:text-5xl md:leading-13.5 font-bold">
           <span>You don’t need to have it all</span>
           <span>figured out.</span>
         </h2>
       </div>
-      <div className="grid grid-cols-3 gap-10 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full">
         {Lists.map((item, id) => (
           <div key={id} className="flex flex-col justify-start items-start gap-5">
             <strong className="font-display text-link text-[44px] leading-13.25">

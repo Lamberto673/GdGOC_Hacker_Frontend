@@ -14,10 +14,10 @@ const Footer = () => {
   const links = navigation ? navigation.map((item) => item.label) : Explore;
 
   return (
-    <div className="flex flex-col justify-start items-start gap-10 pt-14 px-24 pb-7">
-      <div className="flex flex-1 justify-between items-start w-full">
-        <div className="flex flex-col justify-start items-start gap-6 w-120">
-          <Logos className="h-auto w-95.5" />
+    <div className="flex flex-col justify-start items-start gap-10 pt-14 px-5 md:px-12 lg:px-24 pb-7">
+      <div className="flex flex-col md:flex-row flex-1 justify-between items-start gap-10 w-full">
+        <div className="flex flex-col justify-start items-start gap-6 w-full md:w-120">
+          <Logos className="h-auto w-72 md:w-95.5" />
           <p className="text-subtle leading-6.25">
             A student community for curious minds, shared learning, and
             technology with purpose.
@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="h-px bg-line w-full" />
-      <div className="flex w-full justify-between items-center text-xs text-subtle">
+      <div className="flex flex-col md:flex-row w-full justify-between items-start md:items-center gap-2 text-xs text-subtle">
         <p>© GDGoC Universitas Gadjah Mada • 2026/2027</p>
         <p>Made for the campus. Open to possibilities.</p>
       </div>

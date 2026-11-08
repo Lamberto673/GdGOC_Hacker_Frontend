@@ -17,10 +17,10 @@ const spark = (
 
 const Commitment = () => {
   return (
-    <div className="flex justify-start items-center px-24 py-14 gap-16">
+    <div className="flex flex-col md:flex-row justify-start items-start md:items-center px-5 md:px-12 lg:px-24 py-12 md:py-14 gap-6 md:gap-16">
       <div className="flex shrink-0 justify-start items-start">{spark}</div>
       <div className="flex flex-col justify-start gap-3.5">
-        <h2 className="text-[32px] leading-9 font-bold">
+        <h2 className="text-2xl leading-8 md:text-[32px] md:leading-9 font-bold">
           A space to learn. A responsibility to care.
         </h2>
         <p className="text-lg text-subtle">

@@ -12,7 +12,7 @@ const SectionNav = () => {
   const [active, setActive] = useState("#tracks");
 
   return (
-    <div className="flex justify-start items-center gap-12 px-24 py-6 border-y border-line">
+    <div className="flex justify-start items-center gap-8 md:gap-12 px-5 md:px-12 lg:px-24 py-6 border-y border-line overflow-x-auto whitespace-nowrap">
       {Sections.map((item, key) => (
         <a
           key={key}

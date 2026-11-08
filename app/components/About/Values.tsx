@@ -17,7 +17,7 @@ const Values = () => {
   const { data: values, loading, error, retry } = useFetch<Value[]>("/values");
 
   return (
-    <div className="flex flex-col justify-start items-start gap-10 px-24 py-22">
+    <div className="flex flex-col justify-start items-start gap-10 px-5 md:px-12 lg:px-24 py-22">
       <div className="flex flex-col gap-4.5 max-w-200">
         <div className="flex items-center gap-2.5">
           <span className="size-1.75 bg-brand rounded-full" />
@@ -25,14 +25,14 @@ const Values = () => {
             What guides us
           </p>
         </div>
-        <h2 className="text-5xl leading-13.5 font-bold">
+        <h2 className="text-4xl leading-11 md:text-5xl md:leading-13.5 font-bold">
           Good technology starts with good company.
         </h2>
       </div>
       {loading ? (
         <Loading
           count={4}
-          className="grid grid-cols-4 gap-6 w-full"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full"
           height="h-62"
         />
       ) : error ? (
@@ -47,7 +47,7 @@ const Values = () => {
           message="Our community values will show up here soon."
         />
       ) : (
-        <div className="grid grid-cols-4 gap-6 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
           {values.map((item) => (
             <article
               key={item.id}

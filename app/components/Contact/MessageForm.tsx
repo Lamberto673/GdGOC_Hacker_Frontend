@@ -56,7 +56,7 @@ const MessageForm = ({ categories, selected, onSelect }: MessageFormProps) => {
 
   if (sent) {
     return (
-      <div className="flex flex-col justify-center items-start gap-4 p-9 rounded-3xl bg-surface">
+      <div className="flex flex-col justify-center items-start gap-4 p-5 md:p-9 rounded-3xl bg-surface">
         <h2 className="text-3xl leading-8.5 font-bold">
           Thanks, {form.firstName}!
         </h2>
@@ -81,7 +81,7 @@ const MessageForm = ({ categories, selected, onSelect }: MessageFormProps) => {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="flex flex-col justify-start items-start gap-6 p-9 rounded-3xl bg-surface"
+      className="flex flex-col justify-start items-start gap-6 p-5 md:p-9 rounded-3xl bg-surface"
     >
       <div className="flex justify-between items-center w-full">
         <h2 className="text-3xl leading-8.5 font-bold">Send us a message</h2>
@@ -89,7 +89,7 @@ const MessageForm = ({ categories, selected, onSelect }: MessageFormProps) => {
       </div>
       <p className="text-[13px] text-subtle">Fields marked * are required.</p>
 
-      <div className="grid grid-cols-2 gap-5 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
         <label className="flex flex-col gap-2.5 text-sm font-medium">
           First name *
           <input
@@ -215,7 +215,7 @@ const MessageForm = ({ categories, selected, onSelect }: MessageFormProps) => {
         <span className="-mt-4 text-xs text-g-red">{errors.agree}</span>
       )}
 
-      <div className="flex justify-between items-center w-full">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 w-full">
         <button
           type="submit"
           className="flex items-center gap-4 h-13 px-6 rounded-lg bg-brand text-white font-medium cursor-pointer"

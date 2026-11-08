@@ -5,6 +5,7 @@ const ImagesAbout = (props: React.SVGProps<SVGSVGElement>) => (
     xmlnsXlink="http://www.w3.org/1999/xlink"
     width={464}
     height={400}
+    viewBox="0 0 464 400"
     fill="none"
     {...props}
   >

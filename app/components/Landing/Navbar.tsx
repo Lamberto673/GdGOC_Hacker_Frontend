@@ -1,22 +1,37 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import Logos from "../../../public/assets/heroes/Logos";
-import { MoveRight } from "lucide-react";
+import { Menu, MoveRight, X } from "lucide-react";
 import { usePathname } from "next/navigation";
+
+const Pages = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/About" },
+  { label: "Overview", href: "/Overview" },
+  { label: "Contact", href: "/Contact" },
+];
 
 const Navbar = () => {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
   const active = "block rounded-full px-5 py-3.5 bg-tint-blue text-link font-bold";
   const idle = "block rounded-full px-5 py-3.5 hover:bg-surface transition-colors";
 
   return (
-    <div className="sticky top-0 z-50 w-full bg-white border-b border-line h-26">
-      <nav className="flex justify-between items-center h-full px-16">
+    <div className="sticky top-0 z-50 w-full bg-white border-b border-line h-18 lg:h-26">
+      <nav className="flex justify-between items-center h-full px-5 md:px-12 lg:px-16">
         <Link href="/" className="flex items-center">
-          <Logos className="h-auto w-86.5" />
+          <Logos className="h-auto w-60 md:w-86.5" />
         </Link>
-        <ul className="flex gap-2 text-subtle">
+        <button
+          onClick={() => setOpen(!open)}
+          className="lg:hidden p-2 text-ink cursor-pointer"
+          aria-label="Toggle menu"
+        >
+          {open ? <X className="size-6" /> : <Menu className="size-6" />}
+        </button>
+        <ul className="hidden lg:flex gap-2 text-subtle">
           <li>
             <Link
               href="/"
@@ -52,12 +67,34 @@ const Navbar = () => {
         </ul>
         <Link
           href="/Overview"
-          className="flex items-center gap-4 h-13 px-6 rounded-lg bg-brand text-white font-medium"
+          className="hidden lg:flex items-center gap-4 h-13 px-6 rounded-lg bg-brand text-white font-medium"
         >
           Find your track
           <MoveRight className="size-5" />
         </Link>
       </nav>
+      {open && (
+        <div className="lg:hidden flex flex-col gap-2 px-5 py-4 bg-white border-b border-line text-subtle">
+          {Pages.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setOpen(false)}
+              className={pathname === item.href ? active : idle}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <Link
+            href="/Overview"
+            onClick={() => setOpen(false)}
+            className="flex justify-center items-center gap-4 h-13 px-6 mt-2 rounded-lg bg-brand text-white font-medium"
+          >
+            Find your track
+            <MoveRight className="size-5" />
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

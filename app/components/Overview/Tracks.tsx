@@ -21,7 +21,7 @@ const Tracks = () => {
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
-    <div className="flex flex-col justify-start items-start gap-9 px-24 py-20">
+    <div className="flex flex-col justify-start items-start gap-9 px-5 md:px-12 lg:px-24 py-20">
       <div className="flex flex-col gap-4.5 max-w-200">
         <div className="flex items-center gap-2.5">
           <span className="size-1.75 bg-brand rounded-full" />
@@ -29,7 +29,7 @@ const Tracks = () => {
             Explore your interests
           </p>
         </div>
-        <h2 className="text-5xl leading-13.5 font-bold">
+        <h2 className="text-4xl leading-11 md:text-5xl md:leading-13.5 font-bold">
           Three ways in. Plenty of ways forward.
         </h2>
         <p className="text-lg text-subtle">
@@ -40,7 +40,7 @@ const Tracks = () => {
       {loading ? (
         <Loading
           count={3}
-          className="grid grid-cols-3 gap-6 w-full"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full"
           height="h-135"
         />
       ) : error ? (
@@ -55,7 +55,7 @@ const Tracks = () => {
           message="New learning tracks will show up here once they open."
         />
       ) : (
-        <div className="grid grid-cols-3 gap-6 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
           {tracks.map((item) => (
             <TrackCard
               key={item.id}

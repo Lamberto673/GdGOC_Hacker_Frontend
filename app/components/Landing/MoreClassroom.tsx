@@ -30,7 +30,7 @@ const TrackTemplate = ({ Logo, title, description, footer }: TrackList) => (
 
 const MoreClassroom = () => {
   return (
-    <div className="flex flex-col justify-start items-start px-24 py-20 gap-10">
+    <div className="flex flex-col justify-start items-start px-5 md:px-12 lg:px-24 py-20 gap-10">
       <div className="flex flex-col gap-4.5 max-w-200">
         <div className="flex items-center gap-2.5">
           <span className="size-1.75 bg-brand rounded-full" />
@@ -38,7 +38,7 @@ const MoreClassroom = () => {
             More than a classroom
           </p>
         </div>
-        <h2 className="text-5xl leading-13.5 font-bold">
+        <h2 className="text-4xl leading-11 md:text-5xl md:leading-13.5 font-bold">
           Less watching. More making.
         </h2>
         <p className="text-subtle text-lg">
@@ -46,7 +46,7 @@ const MoreClassroom = () => {
           actually use.
         </p>
       </div>
-      <div className="grid grid-cols-3 gap-6 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
         <TrackTemplate
           Logo={<BookOpen />}
           title={`Study together`}

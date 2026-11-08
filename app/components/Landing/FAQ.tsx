@@ -49,7 +49,7 @@ const FAQ = () => {
   const list: FQA[] = error ? FrequentAsked : (faqs ?? []);
 
   return (
-    <div className="grid grid-cols-[400px_1fr] gap-24 px-24 py-22">
+    <div className="grid grid-cols-1 gap-10 lg:grid-cols-[400px_1fr] lg:gap-24 px-5 md:px-12 lg:px-24 py-22">
       <div className="gap-5 flex flex-col justify-start items-start">
         <div className="flex justify-start items-center gap-2.5">
           <span className="rounded-full size-1.75 bg-brand" />
@@ -57,7 +57,7 @@ const FAQ = () => {
             A few good questions
           </p>
         </div>
-        <h2 className="flex flex-col text-5xl leading-13.5 font-bold">
+        <h2 className="flex flex-col text-4xl leading-11 md:text-5xl md:leading-13.5 font-bold">
           <span>Wondering</span>
           <span>where</span>
           <span>to begin?</span>

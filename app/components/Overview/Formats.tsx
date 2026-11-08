@@ -39,7 +39,7 @@ const Formats = () => {
   const { data: formats, loading, error, retry } = useFetch<Format[]>("/formats");
 
   return (
-    <div className="flex flex-col justify-start items-start gap-9 px-24 py-20">
+    <div className="flex flex-col justify-start items-start gap-9 px-5 md:px-12 lg:px-24 py-20">
       <div className="flex flex-col gap-4.5 max-w-200">
         <div className="flex items-center gap-2.5">
           <span className="size-1.75 bg-brand rounded-full" />
@@ -47,7 +47,7 @@ const Formats = () => {
             Ways to learn
           </p>
         </div>
-        <h2 className="text-5xl leading-13.5 font-bold">
+        <h2 className="text-4xl leading-11 md:text-5xl md:leading-13.5 font-bold">
           The format changes. The curiosity stays.
         </h2>
         <p className="text-lg text-subtle">
@@ -58,7 +58,7 @@ const Formats = () => {
       {loading ? (
         <Loading
           count={4}
-          className="grid grid-cols-2 gap-6 w-full"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full"
           height="h-45"
         />
       ) : error ? (
@@ -73,11 +73,11 @@ const Formats = () => {
           message="Learning formats will show up here soon."
         />
       ) : (
-        <div className="grid grid-cols-2 gap-6 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
           {formats.map((item) => (
             <article
               key={item.id}
-              className="flex justify-start items-start gap-6 p-7 bg-white rounded-3xl"
+              className="flex flex-col sm:flex-row justify-start items-start gap-6 p-6 md:p-7 bg-white rounded-3xl"
             >
               <span
                 className={`flex shrink-0 justify-center items-center size-13 rounded-[14px] text-link [&>svg]:size-6 ${
@@ -87,7 +87,7 @@ const Formats = () => {
                 {Styles[item.id]?.Logo ?? <BookOpen />}
               </span>
               <div className="flex flex-col justify-start items-start gap-3.5">
-                <h3 className="text-[27px] leading-7.5 font-bold">
+                <h3 className="text-2xl leading-7 md:text-[27px] md:leading-7.5 font-bold">
                   {item.name}
                 </h3>
                 <p className="text-subtle leading-6.25">{item.description}</p>

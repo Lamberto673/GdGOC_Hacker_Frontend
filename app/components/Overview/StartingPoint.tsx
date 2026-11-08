@@ -4,7 +4,7 @@ import React from "react";
 
 const StartingPoint = () => {
   return (
-    <div className="grid grid-cols-[460px_1fr] gap-16 px-24 py-14">
+    <div className="grid grid-cols-1 gap-6 lg:grid-cols-[460px_1fr] lg:gap-16 px-5 md:px-12 lg:px-24 py-14">
       <div className="flex flex-col justify-start items-start gap-4">
         <div className="flex justify-start items-center gap-2.5">
           <span className="size-1.75 bg-brand rounded-full" />
@@ -12,7 +12,7 @@ const StartingPoint = () => {
             Start where you are
           </p>
         </div>
-        <h2 className="flex flex-col text-4xl leading-10 font-bold">
+        <h2 className="flex flex-col text-3xl leading-9 md:text-4xl md:leading-10 font-bold">
           <span>New to tech?</span>
           <span>That’s a starting point, too.</span>
         </h2>

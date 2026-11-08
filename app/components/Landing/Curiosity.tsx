@@ -4,8 +4,8 @@ import React from "react";
 
 const Curiosity = () => {
   return (
-    <div className="flex px-24 py-16 justify-center items-center">
-      <div className="bg-tint-blue p-12 flex justify-between items-center rounded-4xl gap-12 w-full">
+    <div className="flex px-5 md:px-12 lg:px-24 py-12 md:py-16 justify-center items-center">
+      <div className="bg-tint-blue p-6 md:p-12 flex flex-col md:flex-row justify-between items-start md:items-center rounded-4xl gap-8 md:gap-12 w-full">
         <div className="flex flex-col justify-start items-start gap-4">
           <div className="flex justify-start items-center gap-2.5">
             <span className="size-1.75 bg-brand rounded-full" />
@@ -13,7 +13,7 @@ const Curiosity = () => {
               Your next chapter
             </p>
           </div>
-          <h2 className="flex flex-col justify-start items-start text-[44px] leading-12.25 font-bold">
+          <h2 className="flex flex-col justify-start items-start text-3xl leading-9 md:text-[44px] md:leading-12.25 font-bold">
             <span>Bring your curiosity.</span>
             <span>We’ll build from there.</span>
           </h2>

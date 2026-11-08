@@ -3,8 +3,8 @@ import React from "react";
 
 const ProtoType = () => {
   return (
-    <div className="grid grid-cols-2 items-center px-24 py-22 gap-16">
-      <div className="rounded-4xl p-10 flex flex-col justify-start items-start bg-tint-yellow gap-6">
+    <div className="grid grid-cols-1 lg:grid-cols-2 items-center px-5 md:px-12 lg:px-24 py-14 md:py-22 gap-10 lg:gap-16">
+      <div className="rounded-4xl p-6 md:p-10 flex flex-col justify-start items-start bg-tint-yellow gap-6">
         <div className="flex justify-between items-center w-full">
           <p className="text-xs text-subtle">IDEA → PROTOTYPE</p>
           <CodeXml className="size-6 text-link" />
@@ -15,7 +15,7 @@ const ProtoType = () => {
             <span className="size-2 rounded-full bg-g-yellow" />
             <span className="size-2 rounded-full bg-g-green" />
           </div>
-          <p className="text-[32px] leading-9 font-bold">
+          <p className="text-2xl leading-8 md:text-[32px] md:leading-9 font-bold">
             A little less friction. A better campus day.
           </p>
           <div className="flex items-center gap-3 w-full">
@@ -44,7 +44,7 @@ const ProtoType = () => {
             Build something that matters
           </p>
         </div>
-        <h2 className="text-5xl leading-13.5 font-bold">
+        <h2 className="text-4xl leading-11 md:text-5xl md:leading-13.5 font-bold">
           Your next project could start on campus.
         </h2>
         <p className="text-lg text-subtle">

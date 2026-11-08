@@ -12,7 +12,7 @@ const Workspace = () => {
   const [selected, setSelected] = useState("joining-learning");
 
   return (
-    <div className="grid grid-cols-[456px_1fr] gap-16 px-24 pb-20">
+    <div className="grid grid-cols-1 gap-10 lg:grid-cols-[456px_1fr] lg:gap-16 px-5 md:px-12 lg:px-24 pb-20">
       <div className="flex flex-col justify-start items-start gap-8">
         <Categories
           categories={categories}

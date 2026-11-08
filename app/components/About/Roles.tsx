@@ -11,7 +11,7 @@ const Roles = () => {
   const { data: roles, loading, error, retry } = useFetch<Role[]>("/roles");
 
   return (
-    <div className="grid grid-cols-[400px_1fr] gap-24 px-24 pb-22">
+    <div className="grid grid-cols-1 gap-10 lg:grid-cols-[400px_1fr] lg:gap-24 px-5 md:px-12 lg:px-24 pb-22">
       <div className="flex flex-col justify-start items-start gap-5.5">
         <div className="flex justify-start items-center gap-2.5">
           <span className="size-1.75 bg-brand rounded-full" />
@@ -19,7 +19,7 @@ const Roles = () => {
             People, not labels
           </p>
         </div>
-        <h2 className="text-5xl leading-13.5 font-bold">
+        <h2 className="text-4xl leading-11 md:text-5xl md:leading-13.5 font-bold">
           There’s more than one way to contribute.
         </h2>
         <p className="text-lg text-subtle">
@@ -47,7 +47,7 @@ const Roles = () => {
               key={item.id}
               className="flex flex-col justify-start items-start gap-3.5 w-full"
             >
-              <h3 className="text-[28px] leading-7.75 font-bold">
+              <h3 className="text-2xl leading-7 md:text-[28px] md:leading-7.75 font-bold">
                 {item.title}
               </h3>
               <p className="text-[17px] leading-6.5 text-subtle">

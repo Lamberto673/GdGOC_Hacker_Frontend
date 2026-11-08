@@ -19,7 +19,7 @@ const Tips: Record<string, string>[] = [
 
 const Guidance = () => {
   return (
-    <div className="grid grid-cols-[420px_1fr] gap-20 px-24 py-18">
+    <div className="grid grid-cols-1 gap-10 lg:grid-cols-[420px_1fr] lg:gap-20 px-5 md:px-12 lg:px-24 py-18">
       <div className="flex flex-col justify-start items-start gap-5">
         <div className="flex justify-start items-center gap-2.5">
           <span className="size-1.75 bg-brand rounded-full" />
@@ -27,7 +27,7 @@ const Guidance = () => {
             A little guidance
           </p>
         </div>
-        <h2 className="flex flex-col text-[40px] leading-11.25 font-bold">
+        <h2 className="flex flex-col text-3xl leading-9 md:text-[40px] md:leading-11.25 font-bold">
           <span>Help us understand</span>
           <span>your idea.</span>
         </h2>

@@ -15,10 +15,10 @@ const sparks = (
 );
 const GreenStar = () => {
   return (
-    <div className="flex justify-start items-center px-24 py-16 gap-16">
+    <div className="flex flex-col md:flex-row justify-start items-start md:items-center px-5 md:px-12 lg:px-24 py-12 md:py-16 gap-6 md:gap-16">
       <div className="flex shrink-0 justify-start items-start">{sparks}</div>
       <div className="flex flex-col justify-start gap-4">
-        <h2 className="flex flex-col justify-start items-start text-[40px] leading-11.25 font-bold">
+        <h2 className="flex flex-col justify-start items-start text-3xl leading-9 md:text-[40px] md:leading-11.25 font-bold">
           <span>Different majors. Different starting points.</span>
           <span>A place for all of them.</span>
         </h2>

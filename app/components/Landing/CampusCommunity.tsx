@@ -5,7 +5,7 @@ import React from "react";
 
 const CampusCommunity = () => {
   return (
-    <div className="grid grid-cols-[490px_1fr] gap-24 px-24 py-22">
+    <div className="grid grid-cols-1 gap-10 lg:grid-cols-[490px_1fr] lg:gap-24 px-5 md:px-12 lg:px-24 py-22">
       <div className="flex flex-col gap-5">
         <div className="flex justify-start items-center gap-2.5">
           <span className="size-1.75 bg-brand rounded-full" />
@@ -13,7 +13,7 @@ const CampusCommunity = () => {
             A campus. A community.
           </p>
         </div>
-        <h2 className="text-5xl leading-13.5 font-bold">
+        <h2 className="text-4xl leading-11 md:text-5xl md:leading-13.5 font-bold">
           Not just learning tech. Finding your people.
         </h2>
         <div className="flex justify-start items-center">
@@ -26,7 +26,7 @@ const CampusCommunity = () => {
         </div>
       </div>
       <div className="flex flex-col justify-start items-start gap-6">
-        <p className="text-[21px] leading-8.25 text-subtle">
+        <p className="text-lg md:text-[21px] md:leading-8.25 text-subtle">
           Google Developer Groups on Campus, Universitas Gadjah Mada brings
           students together around one simple idea: we can go{" "}
           <b className="text-ink font-medium">further</b> when we{" "}
@@ -36,7 +36,7 @@ const CampusCommunity = () => {
           From your first line of code to your next product idea, there’s room
           to ask questions, share what you know, and try something new.
         </p>
-        <div className="flex gap-3 items-center">
+        <div className="flex flex-wrap gap-3 items-center">
           <span className="bg-surface rounded-full px-3.5 py-2 text-[13px] font-bold text-subtle">
             Student-led
           </span>

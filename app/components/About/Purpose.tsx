@@ -2,7 +2,7 @@ import React from "react";
 
 const Purpose = () => {
   return (
-    <div className="grid grid-cols-[400px_1fr] gap-24 px-24 py-20">
+    <div className="grid grid-cols-1 gap-10 lg:grid-cols-[400px_1fr] lg:gap-24 px-5 md:px-12 lg:px-24 py-20">
       <div className="flex flex-col justify-start items-start gap-5">
         <div className="flex justify-start items-center gap-2.5">
           <span className="size-1.75 bg-brand rounded-full" />
@@ -10,7 +10,7 @@ const Purpose = () => {
             Why we come together
           </p>
         </div>
-        <h2 className="flex flex-col text-5xl leading-13.5 font-bold">
+        <h2 className="flex flex-col text-4xl leading-11 md:text-5xl md:leading-13.5 font-bold">
           <span>A bridge from</span>
           <span>
             <span className="text-link">“I wonder”</span> to
@@ -19,7 +19,7 @@ const Purpose = () => {
         </h2>
       </div>
       <div className="flex flex-col justify-start items-start gap-6">
-        <p className="text-2xl leading-9.25">
+        <p className="text-xl leading-8 md:text-2xl md:leading-9.25">
           Learning feels different when there’s someone to exchange ideas with,
           a problem you care about, and the space to give it a try.
         </p>

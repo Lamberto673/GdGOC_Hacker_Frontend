@@ -20,12 +20,12 @@ const Pathways: Record<string, string>[] = [
 
 const Outcomes = () => {
   return (
-    <div className="flex flex-col justify-start items-start gap-8 px-24 pb-20">
-      <h2 className="text-4xl leading-10 font-bold">
+    <div className="flex flex-col justify-start items-start gap-8 px-5 md:px-12 lg:px-24 pb-20">
+      <h2 className="text-3xl leading-9 md:text-4xl md:leading-10 font-bold">
         From an interest to something you can show.
       </h2>
       <div className="flex flex-col w-full overflow-hidden rounded-[20px] border border-line">
-        <div className="grid grid-cols-[250px_448px_1fr] gap-7 px-7 py-5 bg-surface text-xs font-medium text-subtle">
+        <div className="hidden md:grid md:grid-cols-[200px_1fr_1fr] lg:grid-cols-[250px_448px_1fr] gap-7 px-7 py-5 bg-surface text-xs font-medium text-subtle">
           <p>Pathway</p>
           <p>What you can practice</p>
           <p>A possible outcome</p>
@@ -33,7 +33,7 @@ const Outcomes = () => {
         {Pathways.map((item, key) => (
           <div
             key={key}
-            className="grid grid-cols-[250px_448px_1fr] gap-7 p-7 border-t border-line"
+            className="grid grid-cols-1 gap-2 md:grid-cols-[200px_1fr_1fr] lg:grid-cols-[250px_448px_1fr] md:gap-7 p-5 md:p-7 border-t border-line"
           >
             <p className="text-lg font-medium">{item.Pathway}</p>
             <p className="text-subtle leading-6.25">{item.Practice}</p>

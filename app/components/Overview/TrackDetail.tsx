@@ -30,7 +30,7 @@ const TrackDetail = ({ id, onClose }: TrackDetailProps) => {
 
   return (
     <article
-      className="relative flex flex-col justify-start items-start gap-5 w-full p-8 rounded-3xl border-2 bg-white"
+      className="relative flex flex-col justify-start items-start gap-5 w-full p-6 md:p-8 rounded-3xl border-2 bg-white"
       style={{ borderColor: track.color }}
     >
       <button
@@ -39,7 +39,7 @@ const TrackDetail = ({ id, onClose }: TrackDetailProps) => {
       >
         <X className="size-6" />
       </button>
-      <div className="flex justify-start items-center gap-4">
+      <div className="flex flex-wrap justify-start items-center gap-4 pr-8">
         <span className="text-4xl">{track.icon}</span>
         <div className="flex flex-col justify-start items-start gap-1">
           <h3 className="text-[28px] leading-7.75 font-bold">{track.name}</h3>

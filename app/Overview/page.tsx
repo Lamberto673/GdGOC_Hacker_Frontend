@@ -20,20 +20,20 @@ const page = () => {
         <SectionNav />
       </section>
 
-      <section id="tracks" className="scroll-mt-26">
+      <section id="tracks" className="scroll-mt-18 lg:scroll-mt-26">
         <Tracks />
         <Outcomes />
       </section>
 
-      <section id="formats" className="scroll-mt-26 bg-surface">
+      <section id="formats" className="scroll-mt-18 lg:scroll-mt-26 bg-surface">
         <Formats />
       </section>
 
-      <section id="journey" className="scroll-mt-26">
+      <section id="journey" className="scroll-mt-18 lg:scroll-mt-26">
         <Journey />
       </section>
 
-      <section id="start" className="scroll-mt-26 bg-tint-yellow">
+      <section id="start" className="scroll-mt-18 lg:scroll-mt-26 bg-tint-yellow">
         <StartingPoint />
       </section>
 

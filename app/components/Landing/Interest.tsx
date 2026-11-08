@@ -46,8 +46,8 @@ export const TrackCard = ({
 
 const Interest = () => {
   return (
-    <div className="flex flex-col justify-start items-start gap-9 pt-4 px-24 pb-22">
-      <div className="flex w-full justify-between items-end">
+    <div className="flex flex-col justify-start items-start gap-9 pt-4 px-5 md:px-12 lg:px-24 pb-22">
+      <div className="flex flex-col md:flex-row w-full justify-between items-start md:items-end gap-4">
         <div className="flex flex-col gap-4.5 max-w-200">
           <div className="flex items-center gap-2.5">
             <span className="size-1.75 bg-brand rounded-full" />
@@ -55,7 +55,7 @@ const Interest = () => {
               Find your starting point
             </p>
           </div>
-          <h2 className="text-5xl leading-13.5 font-bold">
+          <h2 className="text-4xl leading-11 md:text-5xl md:leading-13.5 font-bold">
             Many interests. One shared journey.
           </h2>
           <p className="text-lg text-subtle">
@@ -70,7 +70,7 @@ const Interest = () => {
           See the overview <MoveRight className="size-5" />
         </Link>
       </div>
-      <div className="grid grid-cols-3 gap-6 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
         <TrackCard
           Art={Research}
           eyebrow="EXPLORE THE WHY"
