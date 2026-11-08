@@ -52,6 +52,35 @@ export type InquiryCategory = {
   guidance: string;
 };
 
+export type Faq = {
+  id: string;
+  question: string;
+  answer: string;
+  category: string;
+};
+
+export type NavLink = {
+  label: string;
+  href: string;
+};
+
+export type Stats = {
+  community_members: number;
+  workshops_held: number;
+  projects_shipped: number;
+  active_tracks: number;
+  university: string;
+  city: string;
+  country: string;
+  founded_year: number;
+  social: {
+    instagram: string;
+    linkedin: string;
+    github: string;
+  };
+  tagline: string;
+};
+
 export const getData = async <T>(path: string): Promise<T> => {
   const res = await fetch(`${BASE_URL}${path}`);
   if (!res.ok) {

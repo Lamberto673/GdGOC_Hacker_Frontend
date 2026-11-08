@@ -2,12 +2,13 @@
 import Design from "@/public/assets/tracks/Design";
 import Development from "@/public/assets/tracks/Development";
 import Research from "@/public/assets/tracks/Research";
-import React from "react";
+import React, { useState } from "react";
 import { Track } from "@/lib/api";
 import { useFetch } from "@/lib/useFetch";
 import { TrackCard } from "../Landing/Interest";
 import Loading from "../Loading";
 import StatusMessage from "../StatusMessage";
+import TrackDetail from "./TrackDetail";
 
 const Arts: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
   "research-discovery": Research,
@@ -17,6 +18,7 @@ const Arts: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>> =
 
 const Tracks = () => {
   const { data: tracks, loading, error, retry } = useFetch<Track[]>("/tracks");
+  const [selected, setSelected] = useState<string | null>(null);
 
   return (
     <div className="flex flex-col justify-start items-start gap-9 px-24 py-20">
@@ -62,9 +64,17 @@ const Tracks = () => {
               title={item.name}
               description={item.description}
               skills={item.skills.join(" · ")}
+              onExplore={() => setSelected(item.id)}
             />
           ))}
         </div>
+      )}
+      {selected && (
+        <TrackDetail
+          key={selected}
+          id={selected}
+          onClose={() => setSelected(null)}
+        />
       )}
     </div>
   );

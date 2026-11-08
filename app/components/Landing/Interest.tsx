@@ -13,6 +13,7 @@ type TrackCardProps = {
   title: string;
   description: string;
   skills: string;
+  onExplore?: () => void;
 };
 
 export const TrackCard = ({
@@ -21,6 +22,7 @@ export const TrackCard = ({
   title,
   description,
   skills,
+  onExplore,
 }: TrackCardProps) => {
   return (
     <article className="relative overflow-hidden rounded-3xl border border-line bg-white">
@@ -31,7 +33,10 @@ export const TrackCard = ({
         <p className="text-subtle leading-6.25">{description}</p>
         <hr className="border-line" />
         <p className="text-[13px] leading-5 text-subtle">{skills}</p>
-        <button className="flex items-center gap-3 text-link font-medium cursor-pointer hover:underline">
+        <button
+          onClick={onExplore}
+          className="flex items-center gap-3 text-link font-medium cursor-pointer hover:underline"
+        >
           Explore this track <MoveRight className="size-5" />
         </button>
       </div>

@@ -1,11 +1,18 @@
+"use client";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import Logos from "@/public/assets/heroes/Logos";
 import Link from "next/link";
+import { NavLink, Stats } from "@/lib/api";
+import { useFetch } from "@/lib/useFetch";
 const Explore: string[] = ["Home", "About", "Overview", "Contact"];
 
 const Footer = () => {
+  const { data: navigation } = useFetch<NavLink[]>("/navigation");
+  const { data: stats } = useFetch<Stats>("/stats");
+  const links = navigation ? navigation.map((item) => item.label) : Explore;
+
   return (
     <div className="flex flex-col justify-start items-start gap-10 pt-14 px-24 pb-7">
       <div className="flex flex-1 justify-between items-start w-full">
@@ -18,7 +25,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col justify-center items-start gap-3.5 w-37.5">
           <strong className="text-black">Explore</strong>
-          {Explore.map((item, key) => (
+          {links.map((item, key) => (
             <Link
               href={item === "Home" ? "/" : `/${item}`}
               className="text-[15px] text-subtle hover:text-ink"
@@ -30,13 +37,15 @@ const Footer = () => {
         </div>
         <div className="flex flex-col justify-start items-start gap-4 w-65">
           <strong className="text-black">Keep in the loop</strong>
-          <p className="text-link text-lg">@gdgoc.ugm</p>
+          <p className="text-link text-lg">
+            {stats?.social.instagram ?? "@gdgoc.ugm"}
+          </p>
           <div className="flex items-center gap-4 text-subtle text-2xl">
             <FontAwesomeIcon icon={faInstagram} />
             <FontAwesomeIcon icon={faYoutube} />
           </div>
           <p className="text-subtle text-sm">
-            Learn together. Build together.
+            {stats?.tagline ?? "Learn together. Build together."}
           </p>
         </div>
       </div>

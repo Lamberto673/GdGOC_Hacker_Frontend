@@ -1,11 +1,17 @@
+"use client";
 import { MoveRight } from "lucide-react";
 import Link from "next/link";
+import React, { useState } from "react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Faq } from "@/lib/api";
+import { useFetch } from "@/lib/useFetch";
+import Loading from "../Loading";
+import StatusMessage from "../StatusMessage";
 
 type FQA = {
   question: string;
@@ -28,7 +34,20 @@ const FrequentAsked: FQA[] = [
       "Keep an eye on @gdgoc.ugm for community updates. You can also use the contact page to ask about getting involved.",
   },
 ];
+
+const Categories = [
+  { value: "", label: "All" },
+  { value: "joining-learning", label: "Joining & learning" },
+  { value: "collaboration", label: "Collaboration" },
+  { value: "speaking-sharing", label: "Speaking & sharing" },
+];
+
 const FAQ = () => {
+  const [category, setCategory] = useState("");
+  const path = category ? `/faqs?category=${category}` : "/faqs";
+  const { data: faqs, loading, error, retry } = useFetch<Faq[]>(path);
+  const list: FQA[] = error ? FrequentAsked : (faqs ?? []);
+
   return (
     <div className="grid grid-cols-[400px_1fr] gap-24 px-24 py-22">
       <div className="gap-5 flex flex-col justify-start items-start">
@@ -50,12 +69,44 @@ const FAQ = () => {
           Ask us a question <MoveRight className="size-5" />
         </Link>
       </div>
+      <div className="flex flex-col justify-start items-start gap-8">
+        <div className="flex flex-wrap gap-2">
+          {Categories.map((item) => (
+            <button
+              key={item.value}
+              onClick={() => setCategory(item.value)}
+              className={`rounded-full px-4 py-2 text-sm font-medium cursor-pointer transition-colors ${
+                category === item.value
+                  ? "bg-tint-blue text-link"
+                  : "border border-line text-subtle hover:bg-surface"
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+        {error && (
+          <StatusMessage
+            title="We couldn't load the latest questions"
+            message="Here are a few common ones for now."
+            onRetry={retry}
+          />
+        )}
+        {loading ? (
+          <Loading count={3} className="flex flex-col gap-6 w-full" height="h-16" />
+        ) : list.length === 0 ? (
+          <StatusMessage
+            title="No questions here yet"
+            message="Try another category, or ask us directly."
+          />
+        ) : (
       <Accordion
+        key={list.map((item) => item.question).join()}
         multiple
-        defaultValue={FrequentAsked.map((item) => item.question)}
-        className="gap-6"
+        defaultValue={list.map((item) => item.question)}
+        className="gap-6 w-full"
       >
-        {FrequentAsked.map((item) => (
+        {list.map((item) => (
           <AccordionItem
             key={item.question}
             value={item.question}
@@ -70,6 +121,8 @@ const FAQ = () => {
           </AccordionItem>
         ))}
       </Accordion>
+        )}
+      </div>
     </div>
   );
 };
